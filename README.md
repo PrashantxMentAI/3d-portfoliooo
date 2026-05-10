@@ -178,3 +178,8 @@ To further adapt this portfolio:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## Credits
+
+- Original 3D Portfolio template and character base by [Akash Malhotra](https://github.com/akashrmalhotra).
+- Customizations, content, and 3D tech icons by [Prashant](https://github.com/PrashantxMentAI).
