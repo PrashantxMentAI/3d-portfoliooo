@@ -1,0 +1,251 @@
+.career-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 5;
+  padding: 100px 5%;
+  margin-bottom: 150px;
+  background: transparent;
+  color: #fff;
+}
+
+/* Header Styles */
+.career-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.header-icon {
+  font-size: 32px;
+  color: #22d3ee;
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.5));
+}
+
+.header-title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.header-line {
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent);
+  margin-left: 20px;
+}
+
+/* Timeline Layout */
+.career-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: 50px;
+}
+
+.career-timeline-line {
+  position: absolute;
+  left: 120px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, 
+    rgba(34, 211, 238, 0.5) 0%, 
+    rgba(168, 85, 247, 0.5) 50%, 
+    transparent 100%
+  );
+}
+
+.career-items {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.career-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Date Container */
+.career-date-container {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding-right: 40px;
+  flex-shrink: 0;
+}
+
+.career-month {
+  font-size: 24px;
+  font-weight: 500;
+  color: #22d3ee;
+}
+
+.career-year {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-top: 5px;
+}
+
+.career-duration {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
+}
+
+/* Dot */
+.career-dot-container {
+  position: absolute;
+  left: 120px;
+  top: 10px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.career-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #22d3ee;
+  box-shadow: 0 0 10px #22d3ee;
+}
+
+.career-item:nth-child(even) .career-dot {
+  border-color: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+/* Card Styles */
+.career-card {
+  margin-left: 60px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.career-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 15px var(--icon-color, #22d3ee);
+}
+
+.card-icon {
+  font-size: 32px;
+  color: var(--icon-color, #22d3ee);
+  filter: drop-shadow(0 0 5px var(--icon-color, #22d3ee));
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.card-role {
+  font-size: 18px;
+  font-weight: 500;
+  color: #22d3ee;
+  margin: 5px 0 0 0;
+}
+
+.card-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a855f7;
+  margin: 5px 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 900px) {
+  .career-container {
+    margin-left: 0;
+  }
+  
+  .career-timeline-line {
+    left: 20px;
+  }
+  
+  .career-dot-container {
+    left: 20px;
+  }
+  
+  .career-date-container {
+    display: none; /* Hide date on small screens or move it */
+  }
+  
+  .career-card {
+    margin-left: 40px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .card-icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .card-icon {
+    font-size: 24px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+}
