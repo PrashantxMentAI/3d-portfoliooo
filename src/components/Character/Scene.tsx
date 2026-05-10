@@ -50,7 +50,9 @@ const Scene = () => {
               antialias: true, 
               alpha: true, 
               toneMapping: THREE.ACESFilmicToneMapping,
-              toneMappingExposure: 1.2
+              toneMappingExposure: 1.2,
+              stencil: false,
+              powerPreference: "high-performance"
             }}
             dpr={[1, 2]}
           >
