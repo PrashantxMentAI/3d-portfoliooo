@@ -42,10 +42,10 @@
 .what-content {
   width: 440px;
   height: auto;
-  min-height: 280px;
+  min-height: 240px;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  padding: 30px;
+  padding: 25px;
   box-sizing: border-box;
   background: rgba(9, 9, 11, 0.7);
   backdrop-filter: blur(12px);
@@ -79,7 +79,7 @@
 
 .what-noTouch:hover,
 .what-content-active {
-  padding: 40px;
+  padding: 25px;
 }
 
 
@@ -90,17 +90,17 @@
 }
 
 .what-content h3 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #f8fafc;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   letter-spacing: -1px;
 }
 .what-content p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: rgba(248, 250, 252, 0.8);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .what-content h4 {
