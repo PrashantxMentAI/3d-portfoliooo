@@ -4,6 +4,8 @@ This repository contains the source code for my personal 3D portfolio built with
 
 ![Portfolio Preview](public/images/preview1.png)
 
+https://3d-portfoliooo-dms9fwsah-prashantxmentais-projects.vercel.app/
+
 ## Table of Contents
 
 - [Features](#features)
