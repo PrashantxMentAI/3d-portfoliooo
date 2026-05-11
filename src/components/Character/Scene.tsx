@@ -62,7 +62,6 @@ const Scene = () => {
             <Environment preset="city" environmentIntensity={0.6} />
 
             <Model hoverRef={hoverDivRef} onLoaded={(scene: THREE.Object3D) => setCharacter(scene)} />
-            <FloatingObjects />
 
             <EffectComposer>
               <Bloom 
