@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
-import gsap from "gsap";
 
 interface Props {
   image: string;

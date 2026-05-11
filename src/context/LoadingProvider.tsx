@@ -18,7 +18,7 @@ export const LoadingContext = createContext<LoadingType | null>(null);
 export const LoadingProvider = ({ children }: PropsWithChildren) => {
   const [isLoading, setIsLoading] = useState(true);
   const [displayProgress, setDisplayProgress] = useState(0);
-  const { progress, active } = useProgress();
+  const { progress } = useProgress();
 
   useEffect(() => {
     setDisplayProgress((prev) => Math.max(prev, Math.round(progress)));

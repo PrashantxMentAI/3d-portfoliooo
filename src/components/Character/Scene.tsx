@@ -2,16 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Environment, PerspectiveCamera } from "@react-three/drei";
-import { EffectComposer, Bloom, ChromaticAberration } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 import Model from "./Model";
 import FloatingObjects from "./FloatingObjects";
 import { setCharTimeline, setAllTimeline } from "../utils/GsapScroll";
 import { useLoading } from "../../context/LoadingProvider";
 
-function GsapIntegration({ character, setHoverRef }: { character: THREE.Object3D | null, setHoverRef: any }) {
-  const { camera, gl } = useThree();
+function GsapIntegration({ character }: { character: THREE.Object3D | null }) {
+  const { camera } = useThree();
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const Scene = () => {
   const hoverDivRef = useRef<HTMLDivElement>(null);
   const [character, setCharacter] = useState<THREE.Object3D | null>(null);
 
-  const { setLoading } = useLoading();
+  useLoading();
 
   useEffect(() => {
     // Legacy support for landing touch events if needed
@@ -65,7 +64,7 @@ const Scene = () => {
             <Model hoverRef={hoverDivRef} onLoaded={(scene: THREE.Object3D) => setCharacter(scene)} />
             <FloatingObjects />
 
-            <EffectComposer disableNormalPass>
+            <EffectComposer>
               <Bloom 
                 luminanceThreshold={1.0} 
                 mipmapBlur 
@@ -73,7 +72,7 @@ const Scene = () => {
               />
             </EffectComposer>
 
-            <GsapIntegration character={character} setHoverRef={hoverDivRef} />
+            <GsapIntegration character={character} />
           </Canvas>
         </div>
       </div>

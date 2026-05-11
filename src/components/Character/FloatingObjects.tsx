@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Physics, RigidBody, InstancedRigidBodies } from "@react-three/rapier";
+import { Physics, InstancedRigidBodies } from "@react-three/rapier";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
@@ -15,17 +15,18 @@ function Swarm({ count }: { count: number }) {
   const instances = useRef<THREE.InstancedMesh>(null);
   
   // Create random initial positions and rotations
-  const positions = Array.from({ length: count }, () => [
-    (Math.random() - 0.5) * 40,
-    (Math.random() - 0.5) * 40,
-    (Math.random() - 0.5) * 20 - 10,
-  ]);
-  
-  const rotations = Array.from({ length: count }, () => [
-    Math.random() * Math.PI,
-    Math.random() * Math.PI,
-    Math.random() * Math.PI,
-  ]);
+  const instancesData = Array.from({ length: count }, () => ({
+    position: [
+      (Math.random() - 0.5) * 40,
+      (Math.random() - 0.5) * 40,
+      (Math.random() - 0.5) * 20 - 10,
+    ] as [number, number, number],
+    rotation: [
+      Math.random() * Math.PI,
+      Math.random() * Math.PI,
+      Math.random() * Math.PI,
+    ] as [number, number, number],
+  }));
 
   useFrame(() => {
     if (!instances.current) return;
@@ -34,8 +35,7 @@ function Swarm({ count }: { count: number }) {
 
   return (
     <InstancedRigidBodies
-      positions={positions as any}
-      rotations={rotations as any}
+      instances={instancesData}
       colliders="ball"
       linearDamping={4}
       angularDamping={1}

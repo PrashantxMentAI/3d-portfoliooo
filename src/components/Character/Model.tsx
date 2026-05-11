@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import * as THREE from "three";
-import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { decryptFile } from "./utils/decrypt";
 import { typingBoneNames, eyebrowBoneNames } from "../../data/boneData";
-import { setCharTimeline, setAllTimeline } from "../utils/GsapScroll";
 
 export default function Model({ hoverRef, ...props }: any) {
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
@@ -36,7 +34,7 @@ export default function Model({ hoverRef, ...props }: any) {
 function ModelContent({ url, hoverRef, ...props }: any) {
   const group = useRef<THREE.Group>(null);
   // useGLTF takes a second argument for draco decoder path, or true to use default CDN
-  const { scene, animations } = useGLTF(url, "/draco/");
+  const { scene, animations } = useGLTF(url, "/draco/") as any;
   const { actions, mixer } = useAnimations(animations, group);
 
 
